@@ -2,23 +2,23 @@ class Solution {
 public:
     
     // t/c-> O(nlogn)  s.c->O(n)
-    static bool comp(pair<string,pair<int,int>> p1 , pair<string,pair<int,int>> p2){
-        if(p1.second.second!=p2.second.second){
-            return p1.second.second< p2.second.second;
+    static bool comp(pair<string,int> p1 , pair<string,int> p2){
+        if(p1.first.size()!=p2.first.size()){
+            return p1.first.size() < p2.first.size();
         }
         else{
-            return p1.second.first < p2.second.first;
+            return p1.second < p2.second;
         }
     }
     string arrangeWords(string text) {
-        vector<pair<string,pair<int,int>>> p;
+        vector<pair<string,int>> p;
         //int cnt=0;
         int ind=0;
         string word;
         stringstream iss(text);
 
         while( iss >> word){
-            p.push_back({word,{ind,word.size()}});
+            p.push_back({word,ind});
             ind++;
         }
         sort(p.begin(),p.end(),comp);

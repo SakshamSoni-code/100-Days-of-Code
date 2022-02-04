@@ -21,7 +21,7 @@
         // Your code here
         /*map<int,int> mp;
         vector<int> ans;
-        mp[0]=0;
+        mp[0]=-1;
         long long prefix_sum=0;
         for(int i=0 ;i<n;i++)
         {
